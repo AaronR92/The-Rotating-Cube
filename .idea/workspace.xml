@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5eb3b3d-67e8-4123-a402-0aca4ecdec11" name="Changes" comment="Centralized rotating dots">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/aaronr92/Edge.java" afterDir="false" />
+    <list default="true" id="e5eb3b3d-67e8-4123-a402-0aca4ecdec11" name="Changes" comment="Final version">
+      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronr92/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronr92/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronr92/RotatingCube.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronr92/RotatingCube.java" afterDir="false" />
     </list>
@@ -81,12 +82,12 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "SDKs",
+    "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Gradle.The-Matrix [clean]">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.aaronr92.Main" />
       <module name="The-Matrix.main" />
@@ -169,10 +170,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="Gradle.The-Matrix [clean]" />
-        <item itemvalue="JAR Application.The-Matrix-1.0-SNAPSHOT.jar" />
         <item itemvalue="Gradle.The-Matrix [jar]" />
+        <item itemvalue="JAR Application.The-Matrix-1.0-SNAPSHOT.jar" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Gradle.The-Matrix [model]" />
       </list>
     </recent_temporary>
@@ -186,7 +187,7 @@
       <option name="presentableId" value="Default" />
       <updated>1665386673703</updated>
       <workItem from="1665386676147" duration="6052000" />
-      <workItem from="1665401490217" duration="7378000" />
+      <workItem from="1665401490217" duration="7806000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1665388317332</created>
@@ -216,7 +217,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665407659679</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Cube is rotating">
+      <created>1665408894922</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1665408894922</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -238,6 +246,8 @@
     <MESSAGE value="A line" />
     <MESSAGE value="Rotating dots" />
     <MESSAGE value="Centralized rotating dots" />
-    <option name="LAST_COMMIT_MESSAGE" value="Centralized rotating dots" />
+    <MESSAGE value="Cube is rotating" />
+    <MESSAGE value="Final version" />
+    <option name="LAST_COMMIT_MESSAGE" value="Final version" />
   </component>
 </project>

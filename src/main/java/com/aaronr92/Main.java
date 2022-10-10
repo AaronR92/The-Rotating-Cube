@@ -4,7 +4,7 @@ import javax.swing.*;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
-        JFrame frame = new JFrame("The Matrix");
+        JFrame frame = new JFrame("The Cube");
 
         RotatingCube cube = new RotatingCube();
 

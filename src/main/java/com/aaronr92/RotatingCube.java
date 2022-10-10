@@ -71,7 +71,7 @@ public class RotatingCube extends JPanel {
             vertex.y -= centroid.y;
             vertex.z -= centroid.z;
 
-            rotate(vertex, 0.03, 0.02, 0.04);
+            rotate(vertex, 0.004, 0.002, 0.008);
 
             // rollback to actual values
             vertex.x += centroid.x;
@@ -109,7 +109,7 @@ public class RotatingCube extends JPanel {
 
     public void updateCube() throws InterruptedException {
         while (true) {
-            Thread.sleep(50);
+            Thread.sleep(16);
             paint(getGraphics());
         }
     }
