@@ -6,7 +6,7 @@ import java.awt.*;
 import static java.lang.Math.*;
 
 public class RotatingCube extends JPanel {
-    private Vec3[] vertices = {
+    private final Vec3[] vertices = {
             new Vec3(100, 100, 100),
             new Vec3(200, 100, 100),
             new Vec3(200, 200, 100),
@@ -17,7 +17,7 @@ public class RotatingCube extends JPanel {
             new Vec3(200, 200, 200),
             new Vec3(100, 200, 200)
     };
-    private Vec3 centroid;
+    private final Vec3 centroid;
 
     RotatingCube() {
         this.setPreferredSize(new Dimension(800, 600));
@@ -32,6 +32,10 @@ public class RotatingCube extends JPanel {
             centroid.y += vec3.y;
             centroid.z += vec3.z;
         }
+
+        centroid.x /= vertices.length;
+        centroid.y /= vertices.length;
+        centroid.z /= vertices.length;
     }
 
     @Override
@@ -39,32 +43,44 @@ public class RotatingCube extends JPanel {
         super.paint(graphics);
         Graphics2D g = (Graphics2D) graphics;
 
-        // center align
-        g.translate(getWidth() / 3, getHeight() / 3);
+        // cam center align
+        g.translate(getWidth() / 3.3, getHeight() / 3.8);
         g.setColor(Color.WHITE);
 
-        for (Vec3 vec3 : vertices) {
-            rotate(vec3, 0.003, 0.002, 0.004);
+        // rotation
+        for (Vec3 vertex : vertices) {
+            // center points
+            vertex.x -= centroid.x;
+            vertex.y -= centroid.y;
+            vertex.z -= centroid.z;
+
+            rotate(vertex, 0.003, 0.002, 0.004);
+
+            vertex.x += centroid.x;
+            vertex.y += centroid.y;
+            vertex.z += centroid.z;
         }
-        for (Vec3 vec3 : vertices) {
-            g.drawLine((int) vec3.x, (int) vec3.y, (int) vec3.x, (int) vec3.y);
+
+        // drawing
+        for (Vec3 vertex : vertices) {
+            g.drawLine((int) vertex.x, (int) vertex.y, (int) vertex.x, (int) vertex.y);
         }
     }
 
-    private void rotate(Vec3 point, double x, double y, double z) {
+    private void rotate(Vec3 vertex, double x, double y, double z) {
         double rad;
 
         rad = x;
-        point.y = cos(rad) * point.y - sin(rad) * point.z;
-        point.z = sin(rad) * point.y + cos(rad) * point.z;
+        vertex.y = cos(rad) * vertex.y - sin(rad) * vertex.z;
+        vertex.z = sin(rad) * vertex.y + cos(rad) * vertex.z;
 
         rad = y;
-        point.x = cos(rad) * point.x + sin(rad) * point.z;
-        point.z = -sin(rad) * point.x + cos(rad) * point.z;
+        vertex.x = cos(rad) * vertex.x + sin(rad) * vertex.z;
+        vertex.z = -sin(rad) * vertex.x + cos(rad) * vertex.z;
 
         rad = z;
-        point.x = cos(rad) * point.x - sin(rad) * point.y;
-        point.y = sin(rad) * point.x + cos(rad) * point.y;
+        vertex.x = cos(rad) * vertex.x - sin(rad) * vertex.y;
+        vertex.y = sin(rad) * vertex.x + cos(rad) * vertex.y;
 
     }
 
