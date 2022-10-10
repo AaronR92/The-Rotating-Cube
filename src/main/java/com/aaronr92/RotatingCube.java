@@ -17,6 +17,23 @@ public class RotatingCube extends JPanel {
             new Vec3(200, 200, 200),
             new Vec3(100, 200, 200)
     };
+    private final Edge[] edges = {
+            new Edge(0, 4),
+            new Edge(1, 5),
+            new Edge(2, 6),
+            new Edge(3, 7),
+
+            //
+            new Edge(0, 1),
+            new Edge(1, 2),
+            new Edge(2, 3),
+            new Edge(3, 0),
+
+            new Edge(4, 5),
+            new Edge(5, 6),
+            new Edge(6, 7),
+            new Edge(7, 4)
+    };
     private final Vec3 centroid;
 
     RotatingCube() {
@@ -26,7 +43,7 @@ public class RotatingCube extends JPanel {
 
         centroid = new Vec3(0, 0, 0);
 
-        // Centroid calculation
+        // centroid calculation
         for (Vec3 vec3 : vertices) {
             centroid.x += vec3.x;
             centroid.y += vec3.y;
@@ -54,11 +71,17 @@ public class RotatingCube extends JPanel {
             vertex.y -= centroid.y;
             vertex.z -= centroid.z;
 
-            rotate(vertex, 0.003, 0.002, 0.004);
+            rotate(vertex, 0.03, 0.02, 0.04);
 
+            // rollback to actual values
             vertex.x += centroid.x;
             vertex.y += centroid.y;
             vertex.z += centroid.z;
+        }
+        // drawing connections
+        for (Edge edge : edges) {
+            g.drawLine((int) vertices[edge.a].x, (int) vertices[edge.a].y,
+                    (int) vertices[edge.b].x, (int) vertices[edge.b].y);
         }
 
         // drawing
@@ -84,14 +107,10 @@ public class RotatingCube extends JPanel {
 
     }
 
-    public void updateCube() {
+    public void updateCube() throws InterruptedException {
         while (true) {
-            try {
-                Thread.sleep(8);
-                paint(getGraphics());
-            } catch (InterruptedException e) {
-                throw new RuntimeException(e);
-            }
+            Thread.sleep(50);
+            paint(getGraphics());
         }
     }
 }

@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5eb3b3d-67e8-4123-a402-0aca4ecdec11" name="Changes" comment="Rotating dots">
+    <list default="true" id="e5eb3b3d-67e8-4123-a402-0aca4ecdec11" name="Changes" comment="Centralized rotating dots">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/aaronr92/Edge.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronr92/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronr92/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronr92/RotatingCube.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronr92/RotatingCube.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -167,8 +169,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Gradle.The-Matrix [clean]" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Gradle.The-Matrix [clean]" />
         <item itemvalue="JAR Application.The-Matrix-1.0-SNAPSHOT.jar" />
         <item itemvalue="Gradle.The-Matrix [jar]" />
         <item itemvalue="Gradle.The-Matrix [model]" />
@@ -184,7 +186,7 @@
       <option name="presentableId" value="Default" />
       <updated>1665386673703</updated>
       <workItem from="1665386676147" duration="6052000" />
-      <workItem from="1665401490217" duration="6136000" />
+      <workItem from="1665401490217" duration="7378000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1665388317332</created>
@@ -207,7 +209,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665407225876</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Centralized rotating dots">
+      <created>1665407659679</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1665407659679</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -228,6 +237,7 @@
     <MESSAGE value="Init" />
     <MESSAGE value="A line" />
     <MESSAGE value="Rotating dots" />
-    <option name="LAST_COMMIT_MESSAGE" value="Rotating dots" />
+    <MESSAGE value="Centralized rotating dots" />
+    <option name="LAST_COMMIT_MESSAGE" value="Centralized rotating dots" />
   </component>
 </project>
