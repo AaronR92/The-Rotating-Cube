@@ -3,29 +3,18 @@ package com.aaronr92;
 import javax.swing.*;
 import java.awt.*;
 
-public class Matrix extends JFrame {
+public class Matrix extends JPanel {
 
-    JPanel panel;
+    private final int GRID_SIZE = 20;
 
     Matrix() {
-
-        panel = new JPanel();
-
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(500, 500);
-        this.getContentPane().setPreferredSize(Toolkit.getDefaultToolkit().getScreenSize());
-
-        this.add(panel);
-        this.pack();
-
-        this.setLocationRelativeTo(null);
-        this.setVisible(true);
+        this.setPreferredSize(new Dimension(600, 400));
     }
 
     @Override
     public void paint(Graphics g) {
         Graphics2D g2D = (Graphics2D) g;
-
+        g2D.drawLine(0, 0, getWidth(), getHeight());
     }
 
 
