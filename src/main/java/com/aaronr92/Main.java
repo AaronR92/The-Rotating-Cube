@@ -6,14 +6,16 @@ public class Main {
     public static void main(String[] args) {
         JFrame frame = new JFrame("The Matrix");
 
-        Matrix matrix = new Matrix();
+        RotatingCube cube = new RotatingCube();
 
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
-        frame.add(matrix);
+        frame.add(cube);
         frame.pack();
 
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
+
+        cube.updateCube();
     }
 }

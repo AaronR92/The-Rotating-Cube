@@ -4,10 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e5eb3b3d-67e8-4123-a402-0aca4ecdec11" name="Changes" comment="Init">
+    <list default="true" id="e5eb3b3d-67e8-4123-a402-0aca4ecdec11" name="Changes" comment="Rotating dots">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/aaronr92/Panel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/aaronr92/Vec3.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronr92/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronr92/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronr92/Matrix.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/aaronr92/Matrix.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/aaronr92/Matrix.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +83,10 @@
   "keyToString": {
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "nodejs_package_manager_path": "npm"
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "SDKs",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2"
   }
 }]]></component>
   <component name="RunManager" selected="Application.Main">
@@ -181,7 +188,8 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1665386673703</updated>
-      <workItem from="1665386676147" duration="1997000" />
+      <workItem from="1665386676147" duration="6052000" />
+      <workItem from="1665401490217" duration="5695000" />
     </task>
     <task id="LOCAL-00001" summary="Init">
       <created>1665388317332</created>
@@ -190,7 +198,14 @@
       <option name="project" value="LOCAL" />
       <updated>1665388317332</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="A line">
+      <created>1665388724218</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1665388724218</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -209,6 +224,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Init" />
-    <option name="LAST_COMMIT_MESSAGE" value="Init" />
+    <MESSAGE value="A line" />
+    <MESSAGE value="Rotating dots" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rotating dots" />
   </component>
 </project>
