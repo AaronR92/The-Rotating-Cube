@@ -39,14 +39,19 @@ public class RotatingCube extends JPanel {
     private final Vec3 centroid;
     public float xRot;
     public float yRot;
+    public float zRot;
+    public boolean isAutoRotMode;
 
     RotatingCube() {
         this.setPreferredSize(new Dimension(800, 600));
         this.setBackground(Color.darkGray);
         this.setFocusable(true);
 
+        isAutoRotMode = false;
+
         xRot = 0;
         yRot = 0;
+        zRot = 0;
 
         centroid = new Vec3(0, 0, 0);
 
@@ -71,16 +76,22 @@ public class RotatingCube extends JPanel {
             @Override
             public void keyPressed(KeyEvent keyEvent) {
                 if (keyEvent.getKeyChar() == 'a') {
-                    yRot = -0.004f;
+                    yRot = -0.006f;
                 }
                 if (keyEvent.getKeyChar() == 'd') {
-                    yRot = +0.004f;
+                    yRot = 0.006f;
                 }
                 if (keyEvent.getKeyChar() == 'w') {
-                    xRot = +0.004f;
+                    xRot = 0.006f;
                 }
                 if (keyEvent.getKeyChar() == 's') {
-                    xRot = -0.004f;
+                    xRot = -0.006f;
+                }
+                if (keyEvent.getKeyChar() == 'r') {
+                    isAutoRotMode = !isAutoRotMode;
+                    xRot = 0.004f;
+                    yRot = 0.002f;
+                    zRot = 0.008f;
                 }
             }
 
@@ -114,16 +125,12 @@ public class RotatingCube extends JPanel {
             vertex.y += centroid.y;
             vertex.z += centroid.z;
         }
-        // drawing connections
+
+        // drawing edges
         for (Edge edge : edges) {
             g.drawLine((int) vertices[edge.a].x, (int) vertices[edge.a].y,
                     (int) vertices[edge.b].x, (int) vertices[edge.b].y);
         }
-
-        // drawing
-//        for (Vec3 vertex : vertices) {
-//            g.drawLine((int) vertex.x, (int) vertex.y, (int) vertex.x, (int) vertex.y);
-//        }
     }
 
     private void rotate(Vec3 vertex, double x, double y, double z) {
@@ -147,11 +154,7 @@ public class RotatingCube extends JPanel {
 
         Updater updater = new Updater(this);
 
-        while (true) {
-            if (!updater.isAlive()) {
-                updater.run();
-            }
-        }
+        updater.start();
     }
 
 
