@@ -41,6 +41,8 @@ public class RotatingCube extends JPanel {
     public float yRot;
     public float zRot;
     public boolean isAutoRotMode;
+    public boolean isXKeyPressed;
+    public boolean isYKeyPressed;
 
     RotatingCube() {
         this.setPreferredSize(new Dimension(800, 600));
@@ -48,6 +50,8 @@ public class RotatingCube extends JPanel {
         this.setFocusable(true);
 
         isAutoRotMode = false;
+        isXKeyPressed = false;
+        isYKeyPressed = false;
 
         xRot = 0;
         yRot = 0;
@@ -76,15 +80,19 @@ public class RotatingCube extends JPanel {
             @Override
             public void keyPressed(KeyEvent keyEvent) {
                 if (keyEvent.getKeyChar() == 'a') {
+                    isYKeyPressed = true;
                     yRot = -0.006f;
                 }
                 if (keyEvent.getKeyChar() == 'd') {
+                    isYKeyPressed = true;
                     yRot = 0.006f;
                 }
                 if (keyEvent.getKeyChar() == 'w') {
+                    isXKeyPressed = true;
                     xRot = 0.006f;
                 }
                 if (keyEvent.getKeyChar() == 's') {
+                    isXKeyPressed = true;
                     xRot = -0.006f;
                 }
                 if (keyEvent.getKeyChar() == 'r') {
@@ -97,7 +105,14 @@ public class RotatingCube extends JPanel {
 
             @Override
             public void keyReleased(KeyEvent keyEvent) {
-
+                if (keyEvent.getKeyChar() == 'a' ||
+                keyEvent.getKeyChar() == 'd') {
+                    isYKeyPressed = false;
+                }
+                if (keyEvent.getKeyChar() == 'w' ||
+                keyEvent.getKeyChar() == 's') {
+                    isXKeyPressed = false;
+                }
             }
         });
     }
@@ -147,7 +162,6 @@ public class RotatingCube extends JPanel {
         rad = z;
         vertex.x = cos(rad) * vertex.x - sin(rad) * vertex.y;
         vertex.y = sin(rad) * vertex.x + cos(rad) * vertex.y;
-
     }
 
     public void updateCube() {

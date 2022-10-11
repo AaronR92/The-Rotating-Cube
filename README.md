@@ -1,7 +1,7 @@
 ## 3D Rotating Cube
 ### Controls
 WASD keys for rotation.
-R - auto rotation
+R - autorotation
 ### Requirements
 Java 1.8 or higher
 ### Compile

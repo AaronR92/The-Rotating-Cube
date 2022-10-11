@@ -23,16 +23,16 @@ public class Updater extends Thread {
 
     private void slowRotation() {
         if (!panel.isAutoRotMode) {
-            if (panel.yRot != 0) {
+            if (panel.yRot != 0 && !panel.isYKeyPressed) {
                 if (panel.yRot < 0)
-                    panel.yRot += 0.00002f;
+                    panel.yRot += 0.00003f;
                 if (panel.yRot > 0)
-                    panel.yRot -= 0.00002f;
-            } if (panel.xRot != 0) {
+                    panel.yRot -= 0.00003f;
+            } if (panel.xRot != 0 && !panel.isXKeyPressed) {
                 if (panel.xRot < 0)
-                    panel.xRot += 0.00002f;
+                    panel.xRot += 0.00003f;
                 if (panel.xRot > 0)
-                    panel.xRot -= 0.00002f;
+                    panel.xRot -= 0.00003f;
             }
         }
     }
