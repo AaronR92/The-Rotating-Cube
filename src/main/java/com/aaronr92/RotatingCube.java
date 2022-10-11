@@ -89,8 +89,8 @@ public class RotatingCube extends JPanel {
                 }
                 if (keyEvent.getKeyChar() == 'r') {
                     isAutoRotMode = !isAutoRotMode;
-                    xRot = 0.004f;
-                    yRot = 0.002f;
+                    xRot = 0.006f;
+                    yRot = 0.004f;
                     zRot = 0.008f;
                 }
             }
@@ -113,12 +113,12 @@ public class RotatingCube extends JPanel {
 
         // rotation
         for (Vec3 vertex : vertices) {
-            // center points
+            // center vertices
             vertex.x -= centroid.x;
             vertex.y -= centroid.y;
             vertex.z -= centroid.z;
 
-            rotate(vertex, xRot, yRot, 0);
+            rotate(vertex, xRot, yRot, zRot);
 
             // rollback to actual values
             vertex.x += centroid.x;
@@ -151,11 +151,7 @@ public class RotatingCube extends JPanel {
     }
 
     public void updateCube() {
-
         Updater updater = new Updater(this);
-
         updater.start();
     }
-
-
 }
