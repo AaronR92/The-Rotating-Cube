@@ -2,6 +2,8 @@ package com.aaronr92;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
 
 import static java.lang.Math.*;
 
@@ -35,11 +37,16 @@ public class RotatingCube extends JPanel {
             new Edge(7, 4)
     };
     private final Vec3 centroid;
+    public float xRot;
+    public float yRot;
 
     RotatingCube() {
         this.setPreferredSize(new Dimension(800, 600));
         this.setBackground(Color.darkGray);
         this.setFocusable(true);
+
+        xRot = 0;
+        yRot = 0;
 
         centroid = new Vec3(0, 0, 0);
 
@@ -53,6 +60,35 @@ public class RotatingCube extends JPanel {
         centroid.x /= vertices.length;
         centroid.y /= vertices.length;
         centroid.z /= vertices.length;
+
+        // action listener
+        this.addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent keyEvent) {
+
+            }
+
+            @Override
+            public void keyPressed(KeyEvent keyEvent) {
+                if (keyEvent.getKeyChar() == 'a') {
+                    yRot = -0.004f;
+                }
+                if (keyEvent.getKeyChar() == 'd') {
+                    yRot = 0.004f;
+                }
+                if (keyEvent.getKeyChar() == 'w') {
+                    xRot = 0.004f;
+                }
+                if (keyEvent.getKeyChar() == 's') {
+                    xRot = -0.004f;
+                }
+            }
+
+            @Override
+            public void keyReleased(KeyEvent keyEvent) {
+
+            }
+        });
     }
 
     @Override
@@ -71,7 +107,7 @@ public class RotatingCube extends JPanel {
             vertex.y -= centroid.y;
             vertex.z -= centroid.z;
 
-            rotate(vertex, 0.004, 0.002, 0.008);
+            rotate(vertex, xRot, yRot, 0);
 
             // rollback to actual values
             vertex.x += centroid.x;
@@ -85,9 +121,9 @@ public class RotatingCube extends JPanel {
         }
 
         // drawing
-        for (Vec3 vertex : vertices) {
-            g.drawLine((int) vertex.x, (int) vertex.y, (int) vertex.x, (int) vertex.y);
-        }
+//        for (Vec3 vertex : vertices) {
+//            g.drawLine((int) vertex.x, (int) vertex.y, (int) vertex.x, (int) vertex.y);
+//        }
     }
 
     private void rotate(Vec3 vertex, double x, double y, double z) {
@@ -107,10 +143,16 @@ public class RotatingCube extends JPanel {
 
     }
 
-    public void updateCube() throws InterruptedException {
+    public void updateCube() {
+
+        Updater updater = new Updater(this);
+
         while (true) {
-            Thread.sleep(16);
-            paint(getGraphics());
+            if (!updater.isAlive()) {
+                updater.run();
+            }
         }
     }
+
+
 }
