@@ -8,7 +8,7 @@ public class Main {
 
         RotatingCube cube = new RotatingCube();
 
-        frame.setIconImage(new ImageIcon("src/main/resources/icon.png").getImage());
+//        frame.setIconImage(new ImageIcon("src/main/resources/icon.png").getImage());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
         frame.add(cube);

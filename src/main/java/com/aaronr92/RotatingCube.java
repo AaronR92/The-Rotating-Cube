@@ -74,10 +74,10 @@ public class RotatingCube extends JPanel {
                     yRot = -0.004f;
                 }
                 if (keyEvent.getKeyChar() == 'd') {
-                    yRot = 0.004f;
+                    yRot = +0.004f;
                 }
                 if (keyEvent.getKeyChar() == 'w') {
-                    xRot = 0.004f;
+                    xRot = +0.004f;
                 }
                 if (keyEvent.getKeyChar() == 's') {
                     xRot = -0.004f;
