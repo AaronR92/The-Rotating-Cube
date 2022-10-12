@@ -53,6 +53,7 @@ public class RotatingCube extends JPanel {
         isAutoRotMode = false;
         isXKeyPressed = false;
         isYKeyPressed = false;
+        isZKeyPressed = false;
 
         xRot = 0;
         yRot = 0;
@@ -96,6 +97,14 @@ public class RotatingCube extends JPanel {
                     isXKeyPressed = true;
                     xRot = -0.006f;
                 }
+                if (keyEvent.getKeyChar() == 'q') {
+                    isZKeyPressed = true;
+                    zRot = 0.006f;
+                }
+                if (keyEvent.getKeyChar() == 'e') {
+                    isZKeyPressed = true;
+                    zRot = 0.006f;
+                }
                 if (keyEvent.getKeyChar() == 'r') {
                     isAutoRotMode = !isAutoRotMode;
                     xRot = 0.006f;
@@ -113,6 +122,10 @@ public class RotatingCube extends JPanel {
                 if (keyEvent.getKeyChar() == 'w' ||
                 keyEvent.getKeyChar() == 's') {
                     isXKeyPressed = false;
+                }
+                if (keyEvent.getKeyChar() == 'q' ||
+                keyEvent.getKeyChar() == 'e') {
+                    isZKeyPressed = false;
                 }
             }
         });
