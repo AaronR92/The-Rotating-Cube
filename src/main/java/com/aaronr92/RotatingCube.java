@@ -96,7 +96,7 @@ public class RotatingCube extends JPanel {
                     xRot = -0.006f;
                 }
                 if (keyEvent.getKeyChar() == 'r') {
-                    isAutoRotMode = !isAutoRotMode;
+                    isAutoRotMode = true;
                     xRot = 0.006f;
                     yRot = 0.004f;
                     zRot = 0.008f;
@@ -167,5 +167,21 @@ public class RotatingCube extends JPanel {
     public void updateCube() {
         Updater updater = new Updater(this);
         updater.start();
+    }
+
+    public void decelerate() {
+        if (!isAutoRotMode) {
+            if (yRot != 0 && !isYKeyPressed) {
+                if (yRot < 0)
+                    yRot += 0.00004f;
+                if (yRot > 0)
+                    yRot -= 0.00004f;
+            } if (xRot != 0 && !isXKeyPressed) {
+                if (xRot < 0)
+                    xRot += 0.00004f;
+                if (xRot > 0)
+                    xRot -= 0.00004f;
+            }
+        }
     }
 }
