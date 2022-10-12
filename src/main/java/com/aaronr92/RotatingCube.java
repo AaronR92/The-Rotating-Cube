@@ -99,11 +99,11 @@ public class RotatingCube extends JPanel {
                 }
                 if (keyEvent.getKeyChar() == 'q') {
                     isZKeyPressed = true;
-                    zRot = 0.006f;
+                    zRot = -0.008f;
                 }
                 if (keyEvent.getKeyChar() == 'e') {
                     isZKeyPressed = true;
-                    zRot = 0.006f;
+                    zRot = 0.008f;
                 }
                 if (keyEvent.getKeyChar() == 'r') {
                     isAutoRotMode = !isAutoRotMode;
