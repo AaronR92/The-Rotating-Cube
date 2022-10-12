@@ -1,8 +1,8 @@
 ## 3D Rotating Cube
 ### Controls
-WS keys for rotation by x-axis.   
-AD keys for rotation by y-axis.   
-QE keys for rotation by z-axis.   
+WS keys for rotation by x-axis   
+AD keys for rotation by y-axis   
+QE keys for rotation by z-axis   
 R - autorotation
 ### Requirements
 Java 1.8 or higher
