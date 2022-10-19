@@ -9,15 +9,17 @@ import static java.lang.Math.*;
 
 public class RotatingCube extends JPanel {
     private final Vec3[] vertices = {
-            new Vec3(100, 100, 100),
-            new Vec3(200, 100, 100),
-            new Vec3(200, 200, 100),
-            new Vec3(100, 200, 100),
+            // back
+            new Vec3(100, 100, 100),    // top left
+            new Vec3(200, 100, 100),    // top right
+            new Vec3(200, 200, 100),    // bottom right
+            new Vec3(100, 200, 100),    // bottom left
 
-            new Vec3(100, 100, 200),
-            new Vec3(200, 100, 200),
-            new Vec3(200, 200, 200),
-            new Vec3(100, 200, 200)
+            // front
+            new Vec3(100, 100, 200),    // top left
+            new Vec3(200, 100, 200),    // top right
+            new Vec3(200, 200, 200),    // bottom right
+            new Vec3(100, 200, 200)     // bottom left
     };
     private final Edge[] edges = {
             new Edge(0, 4),
@@ -25,7 +27,6 @@ public class RotatingCube extends JPanel {
             new Edge(2, 6),
             new Edge(3, 7),
 
-            //
             new Edge(0, 1),
             new Edge(1, 2),
             new Edge(2, 3),
@@ -157,6 +158,16 @@ public class RotatingCube extends JPanel {
 
         // drawing edges
         for (Edge edge : edges) {
+            g.setStroke(new BasicStroke(2));
+            g.setColor(Color.white);
+
+            if (edge.a == 2 && edge.b == 3)
+                g.setColor(Color.red);
+            if (edge.a == 3 && edge.b == 0)
+                g.setColor(Color.green);
+            if (edge.a == 3 && edge.b == 7)
+                g.setColor(Color.blue);
+
             g.drawLine((int) vertices[edge.a].x, (int) vertices[edge.a].y,
                     (int) vertices[edge.b].x, (int) vertices[edge.b].y);
         }

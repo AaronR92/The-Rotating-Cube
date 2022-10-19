@@ -13,7 +13,7 @@ public class Updater extends Thread {
         while (true) {
             cube.repaint();
             try {
-                Thread.sleep(16);
+                Thread.sleep(8);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
